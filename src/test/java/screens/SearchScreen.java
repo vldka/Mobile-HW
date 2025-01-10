@@ -19,6 +19,7 @@ public class SearchScreen {
         $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys(searchText);
     }
 
+
     @Step("Переход к первому результату из результатов поиска")
     public static void openFirstSearchResult() {
         $$(id("org.wikipedia.alpha:id/page_list_item_title")).first().click();

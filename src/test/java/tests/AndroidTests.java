@@ -6,9 +6,9 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import screens.SearchScreen;
 
-@Tag("mobile")
+@Tag("browserstack")
 @Owner("Vlad Kashkarov")
-@DisplayName("Тест на Android")
+@DisplayName("Тест на Android browserstack")
 public class AndroidTests extends TestBase{
 
     @Test
