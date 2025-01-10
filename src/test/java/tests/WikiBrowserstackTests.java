@@ -8,7 +8,7 @@ import screens.SearchScreen;
 @Tag("browserstack")
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на Android browserstack")
-public class WikiBrowserstackTest extends TestBase{
+public class WikiBrowserstackTests extends TestBase{
     OnboardingScreen onboardingScreen = new OnboardingScreen();
     @Test
     @DisplayName("Проверка поискового запроса")
