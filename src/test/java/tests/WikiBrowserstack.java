@@ -9,7 +9,7 @@ import screens.SearchScreen;
 @Tag("browserstack")
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на Android browserstack")
-public class AndroidTests extends TestBase{
+public class WikiBrowserstack extends TestBase{
 
     @Test
     @DisplayName("Проверка поискового запроса")
