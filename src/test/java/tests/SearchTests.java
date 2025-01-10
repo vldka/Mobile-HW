@@ -5,11 +5,11 @@ import org.junit.jupiter.api.*;
 import screens.OnboardingScreen;
 import screens.SearchScreen;
 
-@Tag("browserstack")
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на Android browserstack")
-public class WikiBrowserstackTests extends TestBase{
+public class SearchTests extends TestBase {
     OnboardingScreen onboardingScreen = new OnboardingScreen();
+
     @Test
     @DisplayName("Проверка поискового запроса")
     void successfulSearchTest() {

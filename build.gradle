@@ -59,15 +59,3 @@ tasks.withType(Test) {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-
-task browserstack(type: Test) {
-    useJUnitPlatform {
-        includeTags("browserstack")
-    }
-}
-
-task remote(type: Test) {
-    useJUnitPlatform {
-        includeTags("remote")
-    }
-}

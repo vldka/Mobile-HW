@@ -2,14 +2,12 @@ package tests;
 
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import screens.OnboardingScreen;
 
-@Tag("remote")
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на Android Эмуляторе")
-public class WikiEmaulatorTests extends TestBase {
+public class OnboardingTests extends TestBase {
 
     OnboardingScreen onboardingScreen = new OnboardingScreen();
 
@@ -25,4 +23,5 @@ public class WikiEmaulatorTests extends TestBase {
         onboardingScreen.clickContinueOnboardButton();
         onboardingScreen.checkOnboarding("Data & Privacy");
     }
+
 }
