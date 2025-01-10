@@ -35,11 +35,6 @@ public class SearchScreen {
     }
 
     @Step("Проверка ошибки")
-    public static void clickPage() {
-        $(id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldBe(Condition.visible);
-    }
-
-    @Step("Проверка ошибки")
     public static void checkPageError() {
         $(id("org.wikipedia.alpha:id/page_list_item_description")).shouldBe(Condition.visible);
     }
