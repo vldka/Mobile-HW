@@ -1,17 +1,15 @@
 package screens;
 
 import com.codeborne.selenide.Condition;
-import drivers.BrowserstackDriver;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static io.appium.java_client.AppiumBy.*;
+import static io.appium.java_client.AppiumBy.accessibilityId;
+import static io.appium.java_client.AppiumBy.id;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchScreen {
-    BrowserstackDriver browserstackDriver = new BrowserstackDriver();
 
     @Step("Выполнение поиска по запросу '{0}' в Wikipedia")
     public static void performSearch(String searchText) {
