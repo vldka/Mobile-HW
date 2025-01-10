@@ -1,5 +1,7 @@
 package screens;
 
+import com.codeborne.selenide.Condition;
+import drivers.BrowserstackDriver;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
@@ -9,6 +11,8 @@ import static io.appium.java_client.AppiumBy.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchScreen {
+    BrowserstackDriver browserstackDriver = new BrowserstackDriver();
+
     @Step("Выполнение поиска по запросу '{0}' в Wikipedia")
     public static void performSearch(String searchText) {
         if (searchText == null || searchText.isEmpty()) {
@@ -31,18 +35,8 @@ public class SearchScreen {
                 .hasSizeGreaterThan(0);
     }
 
-    /*@Step("Проверка ошибки")
-    public static void checkPageError(){
+    @Step("Проверка ошибки")
+    public static void checkPageError() {
         $(id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldBe(Condition.visible);
-    }*/
-    @Step("Scroll страницы")
-    public static void checkScroll(){
-        $(id("org.wikipedia.alpha:id/page_web_view")).scrollTo();
     }
-
-    @Step("Проверка открытия страницы")
-    public static void checkPageOpen(String searchText){
-        $(className("android.widget.TextView")).shouldBe(text(searchText));
-    }
-
 }

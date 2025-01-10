@@ -21,10 +21,10 @@ public class WikiBrowserstackTests extends TestBase{
     @Test
     @DisplayName("Проверка Заголовка при переходе на статью")
     void androidUnsuccessfulOpenArticleTest() {
+        String searchText = "Java";
         onboardingScreen.clickSkipOnboardButton();
-        SearchScreen.performSearch("Java");
+        SearchScreen.performSearch(searchText);
         SearchScreen.openFirstSearchResult();
-        SearchScreen.checkScroll();
-        SearchScreen.checkPageOpen("Java");
+        SearchScreen.checkPageError();
     }
 }
