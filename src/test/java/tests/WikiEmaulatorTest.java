@@ -9,7 +9,7 @@ import screens.OnboardingScreen;
 @Tag("remote")
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на Android Эмуляторе")
-public class WikiEmaulator extends TestBase {
+public class WikiEmaulatorTest extends TestBase {
 
     OnboardingScreen onboardingScreen = new OnboardingScreen();
 

@@ -21,4 +21,11 @@ public class OnboardingScreen {
 
         return this;
     }
+
+    @Step("Нажатие кнопку 'Skip' в онбординге")
+    public OnboardingScreen clickSkipOnboardButton() {
+        $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
+
+        return this;
+    }
 }
