@@ -6,7 +6,7 @@ import screens.OnboardingScreen;
 import screens.SearchScreen;
 
 @Owner("Vlad Kashkarov")
-@DisplayName("Тест на Android browserstack")
+@DisplayName("Тест на проверку поиска")
 public class SearchTests extends TestBase {
     OnboardingScreen onboardingScreen = new OnboardingScreen();
 
@@ -21,7 +21,7 @@ public class SearchTests extends TestBase {
     @Test
     @DisplayName("Проверка Заголовка при переходе на статью")
     void androidUnsuccessfulOpenTest() {
-        String searchText = "Java";
+        String searchText = "Main";
         onboardingScreen.clickSkipOnboardButton();
         SearchScreen.performSearch(searchText);
         SearchScreen.openFirstSearchResult();

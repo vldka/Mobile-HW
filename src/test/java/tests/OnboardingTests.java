@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import screens.OnboardingScreen;
 
 @Owner("Vlad Kashkarov")
-@DisplayName("Тест на Android Эмуляторе")
+@DisplayName("Тест на проверку Онбординга")
 public class OnboardingTests extends TestBase {
 
     OnboardingScreen onboardingScreen = new OnboardingScreen();
