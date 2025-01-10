@@ -1,8 +1,6 @@
 package screens;
 
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -34,12 +32,7 @@ public class SearchScreen {
                 .hasSizeGreaterThan(0);
     }
 
-    @Step("Проверка ошибки")
-    public static void checkPageError() {
-        $(id("org.wikipedia.alpha:id/page_list_item_description")).shouldBe(Condition.visible);
-    }
-
-    @Step("Проверка ошибки")
+    @Step("Проверка страницы '{0}'")
     public static void checkPageText(String searchText) {
         $$(className("android.widget.TextView")).first().shouldBe(text(searchText));
     }
