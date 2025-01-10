@@ -2,11 +2,12 @@ package screens;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static io.appium.java_client.AppiumBy.accessibilityId;
-import static io.appium.java_client.AppiumBy.id;
+import static io.appium.java_client.AppiumBy.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SearchScreen {
@@ -34,7 +35,17 @@ public class SearchScreen {
     }
 
     @Step("Проверка ошибки")
-    public static void checkPageError() {
+    public static void clickPage() {
         $(id("org.wikipedia.alpha:id/view_wiki_error_text")).shouldBe(Condition.visible);
+    }
+
+    @Step("Проверка ошибки")
+    public static void checkPageError() {
+        $(id("org.wikipedia.alpha:id/page_list_item_description")).shouldBe(Condition.visible);
+    }
+
+    @Step("Проверка ошибки")
+    public static void checkPageText(String searchText) {
+        $$(className("android.widget.TextView")).first().shouldBe(text(searchText));
     }
 }
