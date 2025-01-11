@@ -11,21 +11,23 @@ public class SearchTests extends TestBase {
     OnboardingScreen onboardingScreen = new OnboardingScreen();
     String[] searchText = new String[]{"Main", "Java", "Sum"};
 
-        @Test
-        @DisplayName("Проверка поискового запроса")
-        void successfulSearchTest() {
-            onboardingScreen.clickSkipOnboardButton();
-            SearchScreen.performSearch(searchText[0]);
-            SearchScreen.verifySearchResultsPresent();
-        }
-        @Test
-        @DisplayName("Проверка Заголовка при переходе на статью")
-        void androidUnsuccessfulOpenTest() {
-            onboardingScreen.clickSkipOnboardButton();
-            SearchScreen.performSearch(searchText[0]);
-            SearchScreen.openFirstSearchResult();
-            SearchScreen.checkPageText(searchText[0]);
-        }
+    @Test
+    @DisplayName("Проверка поискового запроса")
+    void successfulSearchTest() {
+        onboardingScreen.clickSkipOnboardButton();
+        SearchScreen.performSearch(searchText[0]);
+        SearchScreen.verifySearchResultsPresent();
+    }
+
+    @Test
+    @DisplayName("Проверка Заголовка при переходе на статью")
+    void androidUnsuccessfulOpenTest() {
+        onboardingScreen.clickSkipOnboardButton();
+        SearchScreen.performSearch(searchText[0]);
+        SearchScreen.openFirstSearchResult();
+        SearchScreen.checkPageText(searchText[0]);
+    }
+
     @Test
     @DisplayName("Проверка истории поиска")
     void checkHistorySearchTest() {
