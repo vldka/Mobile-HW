@@ -15,7 +15,7 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка поискового запроса")
     void successfulSearchTest() {
         onboardingScreen.clickSkipOnboardButton();
-        SearchScreen.performSearch(searchText[0]);
+        SearchScreen.performSearch("Appium");
         SearchScreen.verifySearchResultsPresent();
     }
 
