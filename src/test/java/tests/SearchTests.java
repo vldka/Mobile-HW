@@ -1,6 +1,9 @@
 package tests;
 
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.*;
 import screens.OnboardingScreen;
 import screens.SearchScreen;
@@ -12,6 +15,10 @@ public class SearchTests extends TestBase {
     String[] searchText = new String[]{"Main", "Java", "Sum"};
 
     @Test
+    @Feature("Wiki")
+    @Story("Search")
+    @AllureId("35670")
+    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка поискового запроса")
     void successfulSearchTest() {
         onboardingScreen.clickSkipOnboardButton();
@@ -20,6 +27,10 @@ public class SearchTests extends TestBase {
     }
 
     @Test
+    @Feature("Wiki")
+    @Story("Search")
+    @AllureId("35671")
+    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка Заголовка при переходе на статью")
     void androidUnsuccessfulOpenTest() {
         onboardingScreen.clickSkipOnboardButton();
@@ -29,6 +40,10 @@ public class SearchTests extends TestBase {
     }
 
     @Test
+    @Feature("Wiki")
+    @Story("Search")
+    @AllureId("35669")
+    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка истории поиска")
     void checkHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();
@@ -39,6 +54,10 @@ public class SearchTests extends TestBase {
     }
 
     @Test
+    @Feature("Wiki")
+    @Story("Search")
+    @AllureId("35668")
+    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка Очистки поиска")
     void clearHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();

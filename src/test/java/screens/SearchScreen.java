@@ -39,10 +39,11 @@ public class SearchScreen {
                 .hasSizeGreaterThan(0);
     }
 
-    @Step("Проверка очистки поиска")
+    @Step("Проверка истории поиска")
     public static void checkHistorySearchResultsPresent(String text) {
 
-        $$(className("android.widget.TextView")).find(text(text)).should(exist);
+        $(id("org.wikipedia.alpha:id/recent_searches")).
+                $$(className("android.widget.TextView")).find(text(text)).should(exist);
 
     }
 
