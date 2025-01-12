@@ -18,7 +18,7 @@ public class OnboardingTests extends TestBase {
 
     @Test
     @Feature("Wiki")
-    @Story("Search")
+    @Story("Onboard")
     @AllureId("35667")
     @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка прохождения онбординга приложения")
