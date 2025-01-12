@@ -111,7 +111,7 @@ gradle clean test
 
 ## <a name="Отчет в Allure">**Отчет в Allure**</a>
 
-После выполнения тестов можно посмотреть отчет в [Allure](https://jenkins.autotests.cloud/job/Project%20HW-22-TestOps-VladKashkarov/9/allure/)
+После выполнения тестов можно посмотреть отчет в [Allure](https://jenkins.autotests.cloud/job/Wikpedia_mobile/12/allure/)
 
 ### На скриншоте один из результатов выполнения тестов:
 
