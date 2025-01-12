@@ -1,9 +1,9 @@
 {
   "base": {
     "project": "Wikipedia",
-    "environment": "qa.guru",
-    "comment": "comment here @vladka",
-    "reportLink": "C:\\Users\\kwa-1\\AppData\\Local\\Temp\\3304781131260910840\\allure-report",
+    "environment": "wikipedia mobile",
+    "comment": "@vladka Autotest result",
+    "reportLink": "https://jenkins.autotests.cloud/job/Wikpedia_mobile/",
     "language": "en",
     "allureFolder": "allure-report",
     "enableChart": true
