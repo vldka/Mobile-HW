@@ -142,8 +142,7 @@ gradle clean test
 ---
 
 <a id="video"></a>
-<h1 align="center">Видео прохождения тестов</h1>
-
+## <a name="Видео прохождения тестов">**Видео прохождения тестов**</a>
 <p align="center">
 <img title="testResultsVideo1" src="images/tests/video/testResults.gif" width="400" height="700"  alt="video">   
 </p>
