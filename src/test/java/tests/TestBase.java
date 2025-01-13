@@ -14,11 +14,9 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
-
-
+    private static final String device = System.getProperty("deviceHost","emulator");
     @BeforeAll
     static void beforeAll() {
-        String device = System.getProperty("deviceHost");
         if (device.equals("emulator") || device.equals("real")) {
             Configuration.browser = EmulatorDriver.class.getName();
         } else if (device.equals("browserstack")) {
@@ -38,11 +36,11 @@ public class TestBase {
     @AfterEach
     void addAttachments() {
 
-        if (System.getProperty("deviceHost").equals("browserstack")) {
+        if (device.equals("browserstack")) {
             String sessionId = Selenide.sessionId().toString();
             AllureAttach.addVideo(sessionId);
         }
-        if (System.getProperty("deviceHost").equals("emulator")) {
+        if (device.equals("emulator")) {
             AllureAttach.screenshotAs("Last screenshot");
         }
         AllureAttach.pageSource();

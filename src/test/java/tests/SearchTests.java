@@ -4,14 +4,20 @@ import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
-import org.junit.jupiter.api.*;
-import screens.OnboardingScreen;
-import screens.SearchScreen;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.api.Test;
+import screens.*;
 
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на проверку поиска")
 public class SearchTests extends TestBase {
     OnboardingScreen onboardingScreen = new OnboardingScreen();
+    SearchScreen searchScreen = new SearchScreen();
+    ClickSearchScreen clickSearchScreen = new ClickSearchScreen();
+    DeleteSearchScreen deleteSearchScreen = new DeleteSearchScreen();
+    PageResultScreens pageResultScreens = new PageResultScreens();
     String[] searchText = new String[]{"Main", "Java", "Sum"};
 
     @Test
@@ -22,8 +28,8 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка поискового запроса")
     void successfulSearchTest() {
         onboardingScreen.clickSkipOnboardButton();
-        SearchScreen.performSearch("Appium");
-        SearchScreen.verifySearchResultsPresent();
+        searchScreen.performSearchNotNull("Appium");
+        searchScreen.verifySearchResultsPresent();
     }
 
     @Test
@@ -34,9 +40,9 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка Заголовка при переходе на статью")
     void androidUnsuccessfulOpenTest() {
         onboardingScreen.clickSkipOnboardButton();
-        SearchScreen.performSearch(searchText[0]);
-        SearchScreen.openFirstSearchResult();
-        SearchScreen.checkPageText(searchText[0]);
+        searchScreen.performSearchNotNull(searchText[0]);
+        clickSearchScreen.openFirstSearchResult();
+        pageResultScreens.checkPageText(searchText[0]);
     }
 
     @Test
@@ -47,10 +53,10 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка истории поиска")
     void checkHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();
-        SearchScreen.performSearch(searchText[0]);
-        SearchScreen.openFirstSearchResult();
-        SearchScreen.clickSearch();
-        SearchScreen.checkHistorySearchResultsPresent(searchText[0]);
+        searchScreen.performSearchNotNull(searchText[0]);
+        clickSearchScreen.openFirstSearchResult();
+        clickSearchScreen.clickSearch();
+        searchScreen.checkHistorySearchResultsPresent(searchText[0]);
     }
 
     @Test
@@ -61,14 +67,14 @@ public class SearchTests extends TestBase {
     @DisplayName("Проверка Очистки поиска")
     void clearHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();
-        SearchScreen.performSearch(searchText[0]);
-        SearchScreen.openFirstSearchResult();
-        SearchScreen.clickSearch(searchText[1]);
-        SearchScreen.openFirstSearchResult();
-        SearchScreen.clickSearch(searchText[2]);
-        SearchScreen.openFirstSearchResult();
-        SearchScreen.clickSearch();
-        SearchScreen.clearSearch();
-        SearchScreen.checkClearHistorySearchResultsPresent();
+        searchScreen.performSearchNotNull(searchText[0]);
+        clickSearchScreen.openFirstSearchResult();
+        clickSearchScreen.clickSearch(searchText[1]);
+        clickSearchScreen.openFirstSearchResult();
+        clickSearchScreen.clickSearch(searchText[2]);
+        clickSearchScreen.openFirstSearchResult();
+        clickSearchScreen.clickSearch();
+        deleteSearchScreen.clearSearch();
+        searchScreen.checkClearHistorySearchResultsPresent();
     }
 }

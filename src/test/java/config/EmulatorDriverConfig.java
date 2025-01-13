@@ -2,7 +2,8 @@ package config;
 
 import org.aeonbits.owner.Config;
 @Config.Sources({
-        "classpath:properties/${deviceHost}.properties"
+        "classpath:properties/${deviceHost}.properties",
+        "classpath:properties/emulator.properties"
 })
 public interface EmulatorDriverConfig extends Config {
 

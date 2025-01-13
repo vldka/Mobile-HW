@@ -2,7 +2,8 @@ package config;
 
 import org.aeonbits.owner.Config;
 @Config.Sources({
-        "classpath:properties/${deviceHost}.properties"
+        "classpath:properties/${deviceHost}.properties",
+        "classpath:properties/browserstack.properties"
 })
 public interface DriverConfig extends Config {
 

@@ -91,7 +91,7 @@ appium server --base-path /wd/hub
 **Для запуска следует открыть IntelliJ IDEA и выполнить в терминале:**
 
 ```bash
- gradle clean test -DdeviceHost=emulation
+ gradle clean test -DdeviceHost=emulator
 ```
 
 ```
