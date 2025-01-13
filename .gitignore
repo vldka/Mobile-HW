@@ -5,13 +5,13 @@ build/
 
 ### IntelliJ IDEA ###
 .idea
+.idea build
 *.iws
 *.iml
 *.ipr
 
 ### Gradle ###
 .gradle
-.idea build
 
 ### Logs ###
 *.log
