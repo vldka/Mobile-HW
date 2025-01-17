@@ -8,7 +8,10 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import screens.*;
+import screens.ArticleScreen;
+import screens.OnboardingScreen;
+import screens.SearchResultScreen;
+import screens.SearchScreen;
 
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на проверку поиска")
@@ -69,7 +72,6 @@ public class SearchTests extends TestBase {
         searchScreen.performSearchNotNull(searchText[0]);
         searchResultScreen.openFirstSearchResult();
         searchScreen.inputSearch(searchText[1]);
-                //searchScreen.inputSearch(searchText[1]);
         searchResultScreen.openFirstSearchResult();
         searchScreen.inputSearch(searchText[2]);
         searchResultScreen.openFirstSearchResult();

@@ -3,15 +3,14 @@ package screens;
 import io.qameta.allure.Step;
 import screens.component.АctionComponent;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static io.appium.java_client.AppiumBy.*;
-import static org.assertj.core.api.Assertions.assertThat;
+import static io.appium.java_client.AppiumBy.accessibilityId;
+import static io.appium.java_client.AppiumBy.id;
 
 public class SearchScreen {
     АctionComponent action = new АctionComponent();
+
     @Step("Выполнение поиска с главной страницы по запросу '{0}' в Wikipedia с непустым запросом")
     public void performSearchNotNull(String searchText) {
         if (searchText == null || searchText.isEmpty()) {

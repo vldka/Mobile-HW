@@ -15,6 +15,7 @@ import screens.OnboardingScreen;
 public class OnboardingTests extends TestBase {
 
     OnboardingScreen onboardingScreen = new OnboardingScreen();
+
     @Test
     @Feature("Wiki")
     @Story("Onboard ")

@@ -11,10 +11,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
-    private static final String device = System.getProperty("deviceHost","browserstack");
+    private static final String device = System.getProperty("deviceHost", "browserstack");
+
     @BeforeAll
     static void beforeAll() {
         if (device.equals("emulator") || device.equals("real")) {
