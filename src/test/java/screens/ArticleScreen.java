@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.className;
 
-public class PageResultScreens {
+public class ArticleScreen {
 
     @Step("Проверка страницы '{0}'")
     public void checkPageText(String searchText) {

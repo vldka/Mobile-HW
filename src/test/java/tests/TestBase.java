@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
-    private static final String device = System.getProperty("deviceHost","browserstack");
+    private static final String device = System.getProperty("deviceHost","emulator");
     @BeforeAll
     static void beforeAll() {
         if (device.equals("emulator") || device.equals("real")) {

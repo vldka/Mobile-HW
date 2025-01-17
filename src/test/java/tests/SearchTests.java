@@ -15,9 +15,8 @@ import screens.*;
 public class SearchTests extends TestBase {
     OnboardingScreen onboardingScreen = new OnboardingScreen();
     SearchScreen searchScreen = new SearchScreen();
-    ClickSearchScreen clickSearchScreen = new ClickSearchScreen();
-    DeleteSearchScreen deleteSearchScreen = new DeleteSearchScreen();
-    PageResultScreens pageResultScreens = new PageResultScreens();
+    ArticleScreen articleScreen = new ArticleScreen();
+    SearchResultScreen searchResultScreen = new SearchResultScreen();
     String[] searchText = new String[]{"Main", "Java", "Sum"};
 
     @Test
@@ -29,7 +28,7 @@ public class SearchTests extends TestBase {
     void successfulSearchTest() {
         onboardingScreen.clickSkipOnboardButton();
         searchScreen.performSearchNotNull("Appium");
-        searchScreen.verifySearchResultsPresent();
+        searchResultScreen.verifySearchResultsPresent();
     }
 
     @Test
@@ -41,8 +40,8 @@ public class SearchTests extends TestBase {
     void androidUnsuccessfulOpenTest() {
         onboardingScreen.clickSkipOnboardButton();
         searchScreen.performSearchNotNull(searchText[0]);
-        clickSearchScreen.openFirstSearchResult();
-        pageResultScreens.checkPageText(searchText[0]);
+        searchResultScreen.openFirstSearchResult();
+        articleScreen.checkPageText(searchText[0]);
     }
 
     @Test
@@ -54,9 +53,9 @@ public class SearchTests extends TestBase {
     void checkHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();
         searchScreen.performSearchNotNull(searchText[0]);
-        clickSearchScreen.openFirstSearchResult();
-        clickSearchScreen.clickSearch();
-        searchScreen.checkHistorySearchResultsPresent(searchText[0]);
+        searchResultScreen.openFirstSearchResult();
+        searchScreen.clickSearch();
+        searchResultScreen.checkHistorySearchResultsPresent(searchText[0]);
     }
 
     @Test
@@ -68,13 +67,14 @@ public class SearchTests extends TestBase {
     void clearHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();
         searchScreen.performSearchNotNull(searchText[0]);
-        clickSearchScreen.openFirstSearchResult();
-        clickSearchScreen.clickSearch(searchText[1]);
-        clickSearchScreen.openFirstSearchResult();
-        clickSearchScreen.clickSearch(searchText[2]);
-        clickSearchScreen.openFirstSearchResult();
-        clickSearchScreen.clickSearch();
-        deleteSearchScreen.clearSearch();
+        searchResultScreen.openFirstSearchResult();
+        searchScreen.inputSearch(searchText[1]);
+                //searchScreen.inputSearch(searchText[1]);
+        searchResultScreen.openFirstSearchResult();
+        searchScreen.inputSearch(searchText[2]);
+        searchResultScreen.openFirstSearchResult();
+        searchScreen.clickSearch();
+        searchScreen.clearSearch();
         searchScreen.checkClearHistorySearchResultsPresent();
     }
 }
