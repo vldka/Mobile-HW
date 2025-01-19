@@ -12,7 +12,7 @@ import screens.OnboardingScreen;
 
 @Feature("Wiki")
 @Story("Onboard ")
-@Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
+@Tags({@Tag("CRITICAL"), @Tag("REGRESS"),@Tag("Wiki")})
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на проверку Онбординга")
 public class OnboardingTests extends TestBase {
