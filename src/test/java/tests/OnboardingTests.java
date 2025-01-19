@@ -10,6 +10,9 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import screens.OnboardingScreen;
 
+@Feature("Wiki")
+@Story("Onboard ")
+@Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на проверку Онбординга")
 public class OnboardingTests extends TestBase {
@@ -17,10 +20,7 @@ public class OnboardingTests extends TestBase {
     OnboardingScreen onboardingScreen = new OnboardingScreen();
 
     @Test
-    @Feature("Wiki")
-    @Story("Onboard ")
     @AllureId("35667")
-    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка прохождения онбординга приложения")
     public void OnboardingTest() {
         onboardingScreen.checkOnboarding("The Free Encyclopedia\n" +

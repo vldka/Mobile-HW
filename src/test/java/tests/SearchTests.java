@@ -13,6 +13,9 @@ import screens.OnboardingScreen;
 import screens.SearchResultScreen;
 import screens.SearchScreen;
 
+@Feature("Wiki")
+@Story("Search")
+@Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
 @Owner("Vlad Kashkarov")
 @DisplayName("Тест на проверку поиска")
 public class SearchTests extends TestBase {
@@ -23,10 +26,7 @@ public class SearchTests extends TestBase {
     String[] searchText = new String[]{"Main", "Java", "Sum"};
 
     @Test
-    @Feature("Wiki")
-    @Story("Search")
     @AllureId("35670")
-    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка поискового запроса")
     void successfulSearchTest() {
         onboardingScreen.clickSkipOnboardButton();
@@ -35,10 +35,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @Feature("Wiki")
-    @Story("Search")
     @AllureId("35671")
-    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка Заголовка при переходе на статью")
     void androidUnsuccessfulOpenTest() {
         onboardingScreen.clickSkipOnboardButton();
@@ -48,10 +45,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @Feature("Wiki")
-    @Story("Search")
     @AllureId("35669")
-    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка истории поиска")
     void checkHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();
@@ -62,10 +56,7 @@ public class SearchTests extends TestBase {
     }
 
     @Test
-    @Feature("Wiki")
-    @Story("Search")
     @AllureId("35668")
-    @Tags({@Tag("CRITICAL"), @Tag("REGRESS")})
     @DisplayName("Проверка Очистки поиска")
     void clearHistorySearchTest() {
         onboardingScreen.clickSkipOnboardButton();

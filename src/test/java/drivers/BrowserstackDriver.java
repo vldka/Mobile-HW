@@ -1,6 +1,5 @@
 package drivers;
 
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverProvider;
 import config.AuthConfig;
 import config.DriverConfig;
